@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
 require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const sessions = require('express-session');
 const cors = require('cors');
 
-// env
 const dotenv = require('dotenv');
 
 dotenv.config({ path: '.env' });
@@ -192,10 +190,8 @@ app.post('/api/login', async (req, res, next) => {
         },
       },
     }).then(async (user) => {
-      /** if user not present */
       if (!user) return 1;
 
-      /** if credentials are wrong */
       const isValid = await bcrypt.compare(req.body.password, user.password);
 
       if (!isValid) return 2;
@@ -213,7 +209,7 @@ app.post('/api/login', async (req, res, next) => {
           expiresIn: '48h',
         }
       );
-      /** valid user */
+
       return { user, TOKEN };
     });
 

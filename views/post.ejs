@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="views/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./nav'); %>
+
+    <form action="http://localhost:5000/api/add-post" method="post">
+      <h2>Add Post</h2>
+      <div class="input-field">
+        <textarea name="content" id="content" placeholder="Enter Content" rows="4" cols="50"></textarea>
+      </div>
+      <div class="input-field">
+        <input name="image" id="image" placeholder="Enter Image Link" />
+      </div>
+      <input type="submit" value="Add Post" />
+    </form>
+  </body>
+</html>

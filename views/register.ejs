@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="views/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./nav'); %>
+
+    <form action="http://localhost:5000/api/register" method="post">
+      <h2>Register</h2>
+      <div class="input-field">
+        <input type="text" name="firstName" id="firstName" placeholder="Enter First Name" />
+      </div>
+      <div class="input-field">
+        <input type="text" name="lastName" id="lastName" placeholder="Enter Last Name" />
+      </div>
+      <div class="input-field">
+        <input type="email" name="email" id="email" placeholder="Enter Email" />
+      </div>
+      <div class="input-field">
+        <input type="number" min="10" name="mobile" id="mobile" placeholder="Enter Mobile" />
+      </div>
+      <div class="input-field">
+        <input type="password" name="password" id="password" placeholder="Enter Password" />
+      </div>
+      <input type="submit" value="Register" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="views/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./nav'); %>
+    <div style="width: 100%; display: flex; flex-wrap: wrap; flex-direction: row">
+      <% posts.forEach(function(list){%>
+
+      <div class="card" style="width: 18rem; margin: 1em">
+        <img class="card-img-top" src="<%= list.image %>" height="360" alt="Image" />
+
+        <div class="card-body">
+          <h5 class="card-title"><%= list.user.firstName%> <%= list.user.lastName%></h5>
+          <p class="card-text"><%= list.content%></p>
+        </div>
+      </div>
+
+      <%})%>
+    </div>
+  </body>
+</html>

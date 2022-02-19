@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="views/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./nav'); %>
+
+    <form action="http://localhost:5000/api/login" method="post">
+      <h2>Login</h2>
+      <div class="input-field">
+        <input type="text" name="email" id="email" placeholder="Enter Email" />
+      </div>
+      <div class="input-field">
+        <input type="password" name="password" id="password" placeholder="Enter Password" />
+      </div>
+      <input type="submit" value="LogIn" />
+    </form>
+  </body>
+</html>
